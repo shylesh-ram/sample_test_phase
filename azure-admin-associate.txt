@@ -1,0 +1,75 @@
+james lee -> james+connect@cloudlee.io, @jamesdplee
+
+Azure AD:
+---------
+-> Its a set of features that provides access to Azure Environment and also provides access to many different resources.
+-> Identities helps humans access machines -> 'User Identity' (which will be allowed/denyed access to resources that we want to access)
+-> Applications can also have identities that they can authenticate -> 'App Identity'
+
+We need a way to store all these details and Handle all of that 'Identity and Access Management' or 'Identity Platform' (all identity data stored used by all different 'Entitites')
+
+So, we use 'Azure AD Tenant' (Azure AD Environment)
+
+use 'Azure AD identities' to access Azure Resouces.
+
+ex: Azure AD Tenant for 'Aus-E-Mart'. If 'Aus-E-Mart' has resources in Azure, they will have a 'Azure Subscription' and within that subscription, it contains all their resources for 'Aus-E-Mart' like VMs, containers, Databases, Storage etc.
+
+How do we use this information when accessing Azure Resources ?
+---------------------------------------------------------------
+
+If we want to have an 'Azure subscription', we need to have 'users' that can be granted access to the resources in our environment. So, for that we need to have an ('Azure AD Tenant' to 'Azure Subscription') relationship.
+
+Each 'Azure Subscription' MUST be associated with one 'Azure AD Tenant'.
+An 'Azure Subscription' CANNOT be associated with more than one 'Azure AD Tenant'.
+But, An 'Azure AD Tenant' can be associated with MULTIPLE 'Azure Subscription' and also can be used to provide access to other resources like Microsoft 365.
+'Azure AD Tenant' can provide much more functionality than 'Azure'.
+
+-> Securing at Identity Layer rather yhan securing at On-premises Network.
+-> One remote user needs to access all of these different cloud services or applications. So, we DONT want to manage all of these different identities for all of the different cloud services.
+
+-> Azure AD provides much more than just ('Identity as a Service') (platform to store all identity data in cloud without us having to manage infra)
+-> Also help our staff memebers access a range different cloud solutions with just a 'Single Identity' (Single Sign On)
+-> Azure AD provides al lot of features to HELP protect these identities. (Identity Security)
+-> Azure AD has range of different features to simplify the management of all these identities and all of this access' (Enterprise Capabilities).
+-> We can get support for identities both in Cloud and On-premises and other Cloud providers as well.
+-> Azure AD is cross-platform, cross-service solution (Flexible OS Support)
+
+Finally,
+-> We need 'Azure AD' to access resources in an 'Azure Subscription'. But we could have an Azure AD and NOT an 'Azure Subscription'.
+-> We can use 'Azure AD' to access other services and other solutions wherever they might br Hosted.
+
+
+Azure Management Tools:
+------------------------
+-> Azure Portal (https://portal.azure.com)
+-> Azure CLI => (az service action --arguments)
+-> Azure Powershell (tool used to manage Microsoft products) (install 'Azure Module' with powershell to create, manage, deploy resouces)
+
+Azure Powershell provides a lot of different functionalities. => (Verb-Noun  --Argument) Format. ex: (Install-Module Az)
+ex: create resource group
+   -> 'New-AzResourceGroup -n group1 -l australiaeast'
+   -> 'Get-Help New-AzVM'
+   -> 'Get-Help "VM"'
+
+Types of Azure Subscription:
+----------------------------
+1. Free (30 days free credits), few services access to for 12 months for Free
+2. Student (12 months free credits) No credit card, (Yearly Renewal for student)
+3. Pay As You Go (suits individuals and businesses, Still includes some 'Free-Tier' Services (specific service with specific config & limitations which Microsoft will provide the access for you for Free) (Monthly Bill)
+4. Enterprise Agreement (suits for Enterprise-scale organizations) (on-premise licensing included, ex: ORG would have several different Microsoft products that they would have deployed on-premises) (Software Assurance => to use On-premise licensing on Cloud) (12 - 36 month agreement to microsoft) where we are committing to using all these different licenses and products for long period of time)
+
+Budgets: (Setting Up a Budget for our Azure Subscription)
+--------
+-> actual/forecast therhlod alerts
+-> alerts on Cost Anomalies
+=> Budgets behind the scenes, uses a solution called 'Azure monitor' for email alerts or much advanced automated responses.
+   (Budgets leverage 'Azure Monitor Action Groups' to create 'Automated Responses' to Costs.
+
+
+Azure Public and Private Services:
+-----------------------------------
+
+Azure Ressource Hierarchy:
+---------------------------
+access control (IAM) -> helps us to configure who has access to What operations for what resources within our subscriptions.
+policies -> helps us to go and enforce standards and compliance within our subscriptions
